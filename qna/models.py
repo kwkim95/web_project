@@ -12,6 +12,9 @@ class Question(models.Model):
     def __str__(self):
         return self.subject
 
+    def get_absolute_url(self):
+        return f'/qna/{self.pk}/'
+
 
 class Answer(models.Model):
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='author_answer')
@@ -21,6 +24,9 @@ class Answer(models.Model):
     modify_date = models.DateTimeField(null=True, blank=True)
     voter = models.ManyToManyField(CustomUser, related_name='voter_answer')
 
+    def get_absolute_url(self):
+        return f'/qna/{self.pk}/'
+
 
 class Comment(models.Model):
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
@@ -29,3 +35,6 @@ class Comment(models.Model):
     modify_date = models.DateTimeField(null=True, blank=True)
     question = models.ForeignKey(Question, null=True, blank=True, on_delete=models.CASCADE)
     answer = models.ForeignKey(Answer, null=True, blank=True, on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return f'/qna/{self.pk}/'
