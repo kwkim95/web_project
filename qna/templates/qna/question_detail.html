@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 {% block main_area %}
-<<<<<<< HEAD
-=======
-
->>>>>>> 6c9512bf27661cef47d779d1d8b541bfbcf911e1
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
 <div class="container my-3">
@@ -44,41 +40,11 @@
             <div class="my-3">
                 <a href="{% url 'qna:question_modify' question.id  %}"
                    class="btn btn-sm btn-outline-secondary">수정</a>
-<<<<<<< HEAD
                 <!--modal 방식으로 변경-->
                 <a href="#" class="btn btn-primary float-right my-4" data-toggle="modal" data-target="#exampleModal">삭제</a>
-
-
-
         </div>
         {% endif %}
-=======
-                <a href="#" class="btn btn-primary float-right my-4" data-toggle="modal" data-target="#exampleModal2">삭제</a>
-
-                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel2">질문 삭제</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            질문을 삭제하시겠습니까?
-                        </div>
-                        <div class="modal-footer">
-                            <a href="{% url 'qna:question_delete' question.id %}" class="delete btn btn-sm btn-outline-secondary"
-                   data-uri="{% url 'qna:question_delete' question.id  %}"><button type="button" class="btn btn-success">신청하기</button></a>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">취소하기</button>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            {% endif %}
             </div>
-
->>>>>>> 6c9512bf27661cef47d779d1d8b541bfbcf911e1
         <!-- 질문 댓글 Start -->
         {% if question.comment_set.count > 0 %}
         <div class="mt-3">
@@ -183,8 +149,6 @@
         <input type="submit" value="답변등록" class="btn btn-primary">
     </form>
 </div>
-
-<<<<<<< HEAD
 <!-- 삭제 Modal(질문) -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -205,29 +169,4 @@
         </div>
     </div>
 </div>
-
-<!-- 삭제 Modal(답변) -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">게시물 삭제</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                게시물을 정말 삭제하시겠습니까?
-            </div>
-            <div class="modal-footer">
-                <a role="button" class="btn btn-primary" href="{% url 'qna:question_delete' question.id  %}">삭제하기</a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소하기</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 {% endblock %}
-=======
-{% endblock %}
->>>>>>> 6c9512bf27661cef47d779d1d8b541bfbcf911e1
